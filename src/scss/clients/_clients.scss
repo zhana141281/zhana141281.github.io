@@ -1,0 +1,114 @@
+
+.title-clients {
+  color: #ffffff;
+  font-size: 33px;
+  font-weight: bold;
+  text-align: center;
+  font-family: $font-Montserrat;
+  margin-bottom: 3%;
+  }
+
+.clients {
+  position: relative;
+  background-image: url("../img/people-fon.png");
+  background-position: center;
+  background-size: cover;
+  &::after {
+    display: block;
+    content: "";
+    width: 80% ;
+    height: 2px;
+    background-color: rgba(162, 145, 165, 0.7);
+    position: absolute;
+    bottom: 1%;
+    left: 10%;
+  }
+  &__list {
+    width: 96%;
+    text-align: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    &--position {
+      margin: 16% auto 0 auto;
+         }
+  }
+  &__text {
+    color: rgba(255, 255, 255, 255);
+    text-align: justify-all;
+    margin: 9% 0 13% 0;
+    font-size: 15px;
+    font-family: $font-Lato;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  &__subtext {
+    text-align: center;
+    display: none;
+    font-size: 14px;
+    color: rgba(162, 145, 165,0.7);
+    font-family: $font-Lato;
+    margin: 0 5%;
+
+  }
+}
+
+.clients-position {
+  text-align: center;
+  padding: 20% 0 4% 0;
+}
+
+//-----------------------------------------Media 480------------------------------------------
+@media screen and (min-width: 480px) {
+  .title-clients {
+    display: inline-block;
+  }
+  .clients {
+    &__list {
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 15%;
+      &-item {
+        display: flex;
+        flex-direction: column;
+       }
+    }
+    &__logo {
+      height: 30%;
+      margin: 0 auto;
+    }
+    &__subtext {
+      display: block;
+    }
+    &-position {
+      padding-top: 11%;
+    }
+  }
+  .clients__list--position {
+    margin: 9% auto 0 auto;
+  }
+}
+
+//-----------------------------------------Media 992------------------------------------
+@media screen and (min-width: 992px) {
+  .title-clients {
+    margin-bottom: 0;
+  }
+  .clients {
+    &__list {
+      width: 90%;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-column-gap: 4%;
+      &--position {
+        margin-top: 7%;
+      }
+    }
+    &__logo {
+      height: 40%;
+    }
+    &__text {
+      margin: 9% 0 30% 0;
+    }
+    &-position {
+      padding-top: 6%;
+    }
+  }
+}

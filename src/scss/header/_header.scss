@@ -1,0 +1,382 @@
+
+html {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+*, :after, :before {
+  box-sizing: inherit;
+}
+
+.container {
+  @include container;
+}
+
+.header {
+  background-image: url("../img/header-background.png");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+}
+
+.navbar {
+  width: 100%;
+  background-color: $color-navbar;
+  vertical-align: middle;
+
+  &__logo {
+    position: relative;
+    &--hover {
+      position: absolute;
+      left: 0;
+      top: 0;
+      display: none;
+    }
+    &:hover &--name{
+       color: white;
+            }
+    &:hover &--hover {
+      display: block;
+    }
+
+  }
+
+
+  &__logo--name {
+    position: absolute;
+    top: 10%;
+    left: 120%;
+    font-family: $font-Lato;
+    font-weight: bold;
+    color: $color-main;
+    font-size: 22px;
+    text-transform: uppercase;
+    display: none;
+
+  }
+
+  &__menu-line {
+    margin-top: 7px;
+    width: 27px;
+    position: relative;
+    height: 23px;
+    border-bottom: 3px solid #e5e3e3;
+    box-sizing: border-box;
+    transition: all .5s;
+    cursor: pointer;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      right: 0;
+      top: 0;
+      content: "";
+      display: block;
+      width: 20px;
+      height: 3px;
+      background: #e5e3e3;
+      transition: all .5s;
+    }
+
+    &:after {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      content: "";
+      display: block;
+      height: 3px;
+      background: #e5e3e3;
+      transition: transform .5s, width 2s;
+    }
+  }
+
+  &__dropmenu-line {
+    position: relative;
+  }
+
+  &__dropmenu {
+    display: none;
+    width: 290px;
+    background-color: #333333;
+    position: absolute;
+    top: 176%;
+    right: 0;
+
+    &-li {
+      position: relative;
+      list-style: none;
+      border-bottom: 1px solid #3b3b3b;
+
+      &:hover {
+        &:before {
+          position: absolute;
+          display: block;
+          content: "";
+          width: 8px;
+          height: 55%;
+          background-color: $color-main;
+          top: 20%;
+        }
+      }
+
+    }
+
+    &-link {
+      text-align: left;
+      display: block;
+      padding: 35px;
+      text-decoration: none;
+      font-family: $font-Montserrat;
+      font-size: 26px;
+      color: rgba(255, 255, 255, 255);
+
+      &:hover, &:active {
+        color: $color-main;
+
+      }
+    }
+
+  }
+
+}
+
+.navbar__dropmenu.active {
+  display: block;
+}
+.navbar-position {
+  display: flex;
+  justify-content: space-between;
+  padding: 33px 16px;
+}
+
+.nav-position {
+  padding-bottom: 19px;
+  width: 100%;
+}
+
+.nav {
+  display: none;
+
+  &__menu {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+
+    &-li {
+      list-style: none;
+    }
+
+    &-link {
+      display: block;
+      font-weight: bold;
+      text-decoration: none;
+      color: $color-main;
+      font-size: 16px;
+      font-family: $font-Montserrat;
+      &:hover { color: white;}
+         }
+
+  }
+}
+
+.button {
+  font-family: $font-Montserrat;
+  text-decoration: none;
+  display: block;
+  border-radius: 50px;
+  text-align: center;
+
+}
+
+.btn-nav {
+  font-weight: bold;
+  width: 119px;
+  height: 37px;
+  padding-top: 11px;
+  background-color: $color-main;
+  color: rgba(255, 255, 255, 255);
+  font-size: 15px;
+  &:hover {
+    background-color: white;
+    border: 1px solid $color-main;
+    color: $color-main;
+  }
+}
+
+.btn-header {
+  font-weight: bold;
+  width: 290px;
+  height: 45px;
+  padding-top: 13px;
+  background-color: $color-main;
+  color: rgba(255, 255, 255, 255);
+  font-size: 18px;
+  position: absolute;
+  bottom: -420px;
+  left: calc(50% - 145px);
+  &:hover {
+    background-color: white;
+    border: 1px solid $color-main;
+    color: $color-main;
+  }
+}
+
+.btn-header:after {
+  font-family: $font-Montserrat;
+  display: block;
+  content: "Unlimited 30-Days Trial Period";
+  font-size: 12px;
+  font-weight: normal;
+  color: rgba(132, 142, 151, 0.7);
+  position: absolute;
+  bottom: -25px;
+  left: 16%
+}
+
+.header {
+  &__title {
+    margin-top: 43px;
+    font-family: $font-Montserrat;
+    font-size: 44px;
+    color: white;
+    font-weight: bold;
+  }
+
+  &__subtitle {
+    margin-top: 20px;
+    font-family: $font-Montserrat;
+    font-size: 17px;
+    color: $color-main;
+  }
+
+  &__text {
+    margin-top: 20px;
+    text-transform: uppercase;
+    font-family: $font-Montserrat;
+    font-size: 12px;
+    color: #848e97
+  }
+
+  &__main-button {
+    position: relative;
+    text-align: center;
+  }
+}
+
+.header-position {
+  position: relative;
+  padding-bottom: 400px;
+}
+
+//-----------------------------------------Media 480------------------------------------------
+@media screen and (min-width: 480px) {
+  .navbar {
+    &__logo--name {
+      display: inline-block;
+    }
+
+    &__dropmenu-line {
+      display: none;
+    }
+
+    &-position {
+      padding-bottom: 0;
+    }
+  }
+
+  .nav-position {
+    margin-top: 12%;
+  }
+  .nav {
+    display: block;
+
+    &__menu {
+      &-link {
+        font-size: 11px;
+      }
+    }
+  }
+  .header {
+    &__title {
+      font-size: 52px;
+    }
+
+    &__subtitle {
+      font-size: 17px;
+      display: inline-block;
+    }
+
+    &__text {
+      font-size: 11px;
+    }
+
+  }
+  .btn-header:after {
+    font-size: 14px;
+  }
+  .btn-nav {
+    width: 145px;
+    }
+}
+
+//----------------------------------extra media 640 px-------------------------------------
+@media screen and (min-width: 640px) {
+  .nav {
+    margin-top: 8%;
+
+    &__menu {
+      &-link {
+        font-size: 16px;
+      }
+    }
+  }
+  .btn-header {
+    padding-top: 15px;
+    font-size: 15px;
+    width: 390px;
+    left: calc(50% - 195px)
+  }
+}
+
+//-----------------------------------------Media 992------------------------------------
+@media screen and (min-width: 992px) {
+  .nav {
+    width: 60%;
+    margin: 0 0 0 20%;
+    padding-top: 1.5%;
+
+    &__menu {
+      &-link {
+        font-size: 16px;
+      }
+    }
+  }
+  .navbar {
+    &__logo--name {
+      top: 20%;
+    }
+
+    &-position {
+      padding-bottom: 2%;
+    }
+  }
+  .header {
+     &__title {
+       font-size: 60px;
+     }
+
+     &__subtitle {
+       font-size: 22px;
+       display: inline-block;
+     }
+
+     &__text {
+       font-size: 12px;
+     }
+   }
+
+}
+

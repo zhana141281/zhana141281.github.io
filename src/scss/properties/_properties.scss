@@ -1,0 +1,118 @@
+.properties {
+  margin-top: 70px;
+  padding-top: 30px;
+  background-color: #f4f4f4;
+  font-family: $font-Montserrat;
+  &__title {
+    color: $color-main;
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__list-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__list-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+       }
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__icon {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  &__icon-bigger {
+    padding-left: 25px;
+  }
+  &__subtitle-text {
+    padding-top: 15px;
+    color: #323232;
+    font-family: $font-Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+  }
+  &__text {
+    margin-top: 10px;
+    font-family: $font-Lato;
+    color: #848e97;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+  &__example {
+    overflow: hidden;
+    margin-left: -10px;
+  }
+}
+@media screen and (min-width: 481px) {
+  .properties {
+    &__title {
+      font-size: 36px;
+    }
+    &__list {
+      justify-content: flex-start;
+      align-items: flex-start;
+  }
+    &__list-wrapper {
+      flex-direction: row;
+      padding-right: 10px;
+    }
+    &__icon-wrapper {
+      flex-shrink: 0;
+      width: 120px;
+      height: 110px;
+    }
+    &__text-wrapper {
+      margin-left: 45px;
+      align-items: flex-start;
+    }
+    &__text {
+      text-align: justify;
+    }
+  }
+}
+@media screen and (min-width: 993px) {
+  .properties {
+    &__title {
+      margin-top: 20px;
+      font-size: 48px;
+    }
+    &__title::after {
+      display: block;
+      content: url("../img/properties-editor.png");
+      overflow: hidden;
+    }
+    &__title-wrapper {
+      width: 60%;
+    }
+    &__list {
+      width: 40%;
+      margin-right: 40px;
+    }
+    &__flex-wrapper {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+    &__example {
+      display: none;
+    }
+  }
+}
